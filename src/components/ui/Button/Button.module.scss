@@ -1,0 +1,47 @@
+@use 'sass:color';
+@use '@/styles/variables' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 24px;
+  border-radius: $radius-button;
+  font-size: $fs-sm;
+  font-weight: $fw-bold;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  background-color: $color-primary;
+  color: $color-white;
+
+  &:hover:not(:disabled) {
+    background-color: color.scale($color-primary, $lightness: -15%);
+  }
+}
+
+.accent {
+  background-color: $color-accent;
+  color: $color-text;
+
+  &:hover:not(:disabled) {
+    background-color: color.scale($color-accent, $lightness: -10%);
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
