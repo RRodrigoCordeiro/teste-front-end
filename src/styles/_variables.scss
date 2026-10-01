@@ -7,18 +7,23 @@ $color-gray-dark: #3f3f40;
 $color-white: #ffffff;
 
 
+$color-indigo: #3019b2; 
 $color-gray-light: #dedede; 
 $color-gray-lighter: #d9d9d9; 
+$color-gray-lightest: #f0f0f0; 
 $color-gray-border: #bdbdbd; 
 $color-gray-icon: #707070; 
 $color-gray-darker: #3b3b3b; 
+$color-beige-light: #f6f5f2; 
 $color-overlay: rgba(0, 0, 0, 0.54); 
 
 
 $color-primary: $color-blue;
 $color-accent: $color-yellow;
+$color-highlight: $color-indigo;
 $color-text: $color-gray-dark;
 $color-text-light: $color-gray;
+$color-divider: $color-gray-lightest;
 
 
 $font-family: 'Poppins', sans-serif;
@@ -33,13 +38,12 @@ $fw-semibold: 600;
 $fw-bold: 700;
 $fw-black: 900;
 
-
 $fs-3xs: 10px; 
 $fs-2xs: 11px; 
 $fs-xs: 12px; 
 $fs-sm: 14px; 
 $fs-md: 15px; 
-$fs-base: 16px; 
+$fs-base: 16px;
 $fs-lg: 20px; 
 $fs-xl: 30px; 
 $fs-2xl: 32px; 
@@ -54,9 +58,11 @@ $card-gap: 18px;
 
 
 $radius-card: 10px;
+$radius-input: 10px;
 $radius-modal: 6px;
 $radius-button: 4px;
 
 
 $shadow-card: 0 3px 19px 0 rgba(0, 0, 0, 0.22);
 $shadow-arrow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+$shadow-menu: 0 8px 16px 0 rgba(57, 48, 19, 0.12);

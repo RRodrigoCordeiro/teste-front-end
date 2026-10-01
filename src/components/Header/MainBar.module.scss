@@ -1,0 +1,83 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.mainBar {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 630px) 1fr; 
+  align-items: center;
+  height: 72px;
+}
+
+.logo {
+  justify-self: start;
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 4px;
+  }
+}
+
+.search {
+  position: relative;
+}
+
+.label {
+  @include visually-hidden;
+}
+
+.input {
+  width: 100%;
+  height: 48px;
+  padding: 0 64px 0 16px; 
+  border: none;
+  border-radius: $radius-input;
+  background-color: $color-beige-light;
+  font-family: inherit;
+  font-size: $fs-sm;
+  font-weight: $fw-medium;
+  color: $color-text;
+  appearance: none;
+
+  &::placeholder {
+    color: $color-text-light;
+  }
+
+   
+  &::-webkit-search-cancel-button {
+    appearance: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+.searchButton {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  display: flex;
+  transform: translateY(-50%);
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 32px;
+}
+
+.action {
+  display: flex;
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 4px;
+  }
+}

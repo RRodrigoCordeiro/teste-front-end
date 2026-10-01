@@ -1,0 +1,41 @@
+@use '@/styles/variables' as *;
+
+.menu {
+  position: relative;
+  z-index: 1;  
+  height: 40px;
+  border-top: 1px solid $color-divider;
+  background-color: $color-white;
+  box-shadow: $shadow-menu;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 91px;
+  height: 100%;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: $fs-xs;
+  font-weight: $fw-semibold;
+  color: $color-text-light;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $color-highlight;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 4px;
+  }
+}
+
+.highlight {
+  color: $color-highlight;
+}

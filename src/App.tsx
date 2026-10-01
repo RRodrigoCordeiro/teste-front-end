@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useProducts } from '@/hooks/useProducts';
+import { Header } from '@/components/Header';
 import { ProductShowcase } from '@/components/ProductShowcase';
 import { ProductModal } from '@/components/ProductModal';
 import type { Product } from '@/types/product';
@@ -13,6 +14,8 @@ function App() {
 
   return (
     <>
+      <Header />
+
       <main className={styles.main}>
         <ProductShowcase
           title="Produtos relacionados"

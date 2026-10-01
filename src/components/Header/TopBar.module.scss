@@ -1,0 +1,28 @@
+@use '@/styles/variables' as *;
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  border-bottom: 1px solid $color-divider;
+}
+
+.list {
+  display: flex;
+  gap: 119px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: $fs-xs;
+  font-weight: $fw-medium;
+  color: $color-text-light;
+}
+
+.highlight {
+  font-weight: $fw-semibold;
+  color: $color-highlight;
+}
