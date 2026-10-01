@@ -1,0 +1,81 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+$box-size: 128px;
+$icon-size: 61px;
+
+.categories {
+  @include container;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  gap: 42px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  width: $box-size;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:focus-visible .box {
+    outline: 2px solid $color-primary;
+    outline-offset: 4px;
+  }
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $box-size;
+  height: $box-size;
+  border-radius: $radius-card;
+  background-color: $color-gray-pale;
+  box-shadow: $shadow-category;
+  color: $color-black; 
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.icon {
+  width: $icon-size;
+  height: $icon-size;
+  background-color: currentColor;
+  mask: var(--icon) center / contain no-repeat;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+}
+
+.label {
+  font-size: $fs-sm;
+  font-weight: $fw-medium;
+  color: $color-gray-strong;
+  white-space: nowrap;
+}
+
+.item:hover .box {
+  color: $color-violet;
+}
+
+.active {
+  .box {
+    background-color: $color-white;
+    box-shadow: $shadow-category-active;
+    color: $color-violet;
+  }
+
+  .label {
+    font-weight: $fw-semibold;
+    color: $color-highlight;
+  }
+}

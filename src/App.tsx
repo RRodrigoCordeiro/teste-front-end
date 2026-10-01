@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useProducts } from '@/hooks/useProducts';
 import { Header } from '@/components/Header';
 import { HeroBanner } from '@/components/HeroBanner';
+import { CategoryList } from '@/components/CategoryList';
 import { ProductShowcase } from '@/components/ProductShowcase';
 import { ProductModal } from '@/components/ProductModal';
 import type { Product } from '@/types/product';
@@ -18,7 +19,10 @@ function App() {
       <Header />
 
       <main className={styles.main}>
-        <HeroBanner />
+        <div className={styles.intro}>
+          <HeroBanner />
+          <CategoryList />
+        </div>
 
         <ProductShowcase
           title="Produtos relacionados"
