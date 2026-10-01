@@ -25,7 +25,7 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
 
   const closeModal = () => dialogRef.current?.close();
 
-  // Clique fora da caixa branca (no fundo escuro) fecha o modal
+  
   const handleBackdropClick = (event: MouseEvent<HTMLDialogElement>) => {
     if (event.target === dialogRef.current) closeModal();
   };
