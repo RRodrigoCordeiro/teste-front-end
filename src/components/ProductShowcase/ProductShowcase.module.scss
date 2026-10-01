@@ -1,0 +1,50 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+
+$shadow-space-y: 24px;
+$shadow-space-x: 24px;
+
+.showcase {
+  @include container;
+}
+
+.carousel {
+  position: relative;
+  max-width: $card-width * 4 + $card-gap * 3; 
+  margin: 24px auto 0;
+}
+
+.track {
+  display: flex;
+  gap: $card-gap;
+  margin: (-$shadow-space-y) (-$shadow-space-x);
+  padding: $shadow-space-y $shadow-space-x;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: $shadow-space-x;
+  scrollbar-width: none; 
+ 
+  $peek: $shadow-space-x - $card-gap;
+  mask-image: linear-gradient(
+    to right,
+    transparent $peek,
+    #000 $peek,
+    #000 calc(100% - #{$peek}),
+    transparent calc(100% - #{$peek})
+  );
+
+  &::-webkit-scrollbar {
+    display: none;  
+  }
+}
+
+.slide {
+  flex: 0 0 $card-width;
+  scroll-snap-align: start;
+}
+
+.status {
+  padding: 40px 0;
+  text-align: center;
+}

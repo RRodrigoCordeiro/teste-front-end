@@ -1,0 +1,8 @@
+@use '@/styles/variables' as *;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: $section-spacing;
+  padding-block: $section-spacing;
+}
