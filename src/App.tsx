@@ -1,5 +1,5 @@
-import { useProducts } from './hooks/useProducts';
-import { formatPrice } from './utils/formatPrice';
+import { useProducts } from '@/hooks/useProducts';
+import { formatPrice } from '@/utils/formatPrice';
 
 function App() {
   const { products, isLoading, error } = useProducts();
