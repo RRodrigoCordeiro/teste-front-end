@@ -1,13 +1,11 @@
 @use '@/styles/variables' as *;
 
-
 $intro-spacing: 39px;
 
 .main {
   display: flex;
   flex-direction: column;
   gap: $section-spacing;
-  padding-bottom: $section-spacing;
 }
 
 .intro {
