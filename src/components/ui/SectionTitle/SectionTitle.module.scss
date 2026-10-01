@@ -1,17 +1,19 @@
 @use '@/styles/variables' as *;
 
 .title {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 34px;
   font-size: $fs-xl;
   font-weight: $fw-bold;
   line-height: 45px;
   color: $color-primary;
   text-align: center;
+}
 
- 
+.withLines {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 34px;
+
   &::before,
   &::after {
     content: '';
