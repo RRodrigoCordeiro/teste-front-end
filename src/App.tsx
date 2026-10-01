@@ -35,6 +35,17 @@ function App() {
         />
 
         <PartnerBanners />
+
+        <ProductShowcase
+          title="Produtos relacionados"
+          products={products}
+          isLoading={isLoading}
+          error={error}
+          showViewAll
+          onSelectProduct={setSelectedProduct}
+        />
+
+        <PartnerBanners />
       </main>
 
       {selectedProduct && (

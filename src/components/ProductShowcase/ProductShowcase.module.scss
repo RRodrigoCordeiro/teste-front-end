@@ -1,7 +1,6 @@
 @use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
-
 $shadow-space-y: 24px;
 $shadow-space-x: 24px;
 
@@ -9,9 +8,28 @@ $shadow-space-x: 24px;
   @include container;
 }
 
+.viewAll {
+  display: block;
+  width: fit-content;
+  margin: 4px auto 0;
+  font-size: $fs-md;
+  font-weight: $fw-bold;
+  line-height: 1.5;
+  color: $color-text;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
 .carousel {
   position: relative;
-  max-width: $card-width * 4 + $card-gap * 3; 
+  max-width: $card-width * 4 + $card-gap * 3;
   margin: 24px auto 0;
 }
 
@@ -23,7 +41,7 @@ $shadow-space-x: 24px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-padding-inline: $shadow-space-x;
-  scrollbar-width: none; 
+  scrollbar-width: none;
 
   $peek: $shadow-space-x - $card-gap;
   mask-image: linear-gradient(
@@ -35,7 +53,7 @@ $shadow-space-x: 24px;
   );
 
   &::-webkit-scrollbar {
-    display: none; 
+    display: none;
   }
 }
 
@@ -43,7 +61,6 @@ $shadow-space-x: 24px;
   flex: 0 0 $card-width;
   scroll-snap-align: start;
 }
-
 
 .offscreen {
   --card-shadow: none;

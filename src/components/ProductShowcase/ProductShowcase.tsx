@@ -22,6 +22,7 @@ interface ProductShowcaseProps {
   isLoading?: boolean;
   error?: string | null;
   showCategories?: boolean;
+  showViewAll?: boolean;
   onSelectProduct: (product: Product) => void;
 }
 
@@ -31,11 +32,12 @@ export function ProductShowcase({
   isLoading = false,
   error = null,
   showCategories = false,
+  showViewAll = false,
   onSelectProduct,
 }: ProductShowcaseProps) {
   const titleId = useId();
   const [activeCategory, setActiveCategory] = useState<string>(CATEGORIES[0]);
-  const { trackRef, canScrollPrev, canScrollNext, visibleIndexes, scroll } =
+  const { trackRef, canScrollPrev, canScrollNext, hiddenIndexes, scroll } =
     useCarousel<HTMLUListElement>(products.length);
 
   const hasProducts = products.length > 0;
@@ -50,6 +52,13 @@ export function ProductShowcase({
           activeCategory={activeCategory}
           onChange={setActiveCategory}
         />
+      )}
+
+     
+      {showViewAll && (
+        <a href="#" className={styles.viewAll}>
+          Ver todos
+        </a>
       )}
 
       <div className={styles.carousel}>
@@ -75,7 +84,7 @@ export function ProductShowcase({
               key={product.productName}
               data-index={index}
               className={`${styles.slide} ${
-                visibleIndexes.has(index) ? '' : styles.offscreen
+                hiddenIndexes.has(index) ? styles.offscreen : ''
               }`}
             >
               <ProductCard product={product} onSelect={onSelectProduct} />
