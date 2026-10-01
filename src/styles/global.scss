@@ -35,3 +35,8 @@ a {
 ul {
   list-style: none;
 }
+
+ 
+html:has(dialog[open]) {
+  overflow: hidden;
+}

@@ -1,0 +1,113 @@
+@use '@/styles/variables' as *;
+
+.modal {
+  width: min(769px, 100% - 32px);
+  max-width: none;
+  margin: auto;  
+  padding: 0;
+  border: none;
+  border-radius: $radius-modal;
+  background-color: $color-white;
+  color: $color-text;
+
+  &:focus {
+    outline: none; 
+  }
+
+  &::backdrop {
+    background-color: $color-overlay;
+  }
+}
+.content {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 87px;
+  min-height: 299px;
+  padding: 56px 51px 38px 56px;
+}
+
+ 
+.close {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: $color-gray-icon;
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+.image {
+  flex: 0 0 247px;
+  width: 247px;
+  height: 192px;
+  object-fit: contain;
+}
+
+.info {
+  display: flex;
+  flex: 0 1 328px;
+  flex-direction: column;
+  margin-top: 7px; 
+}
+
+.name {
+  font-size: $fs-lg;
+  font-weight: $fw-regular;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.price {
+  margin-top: 18px;
+  font-size: $fs-lg;
+  font-weight: $fw-semibold;
+  line-height: 1;
+}
+
+.description {
+  max-width: 290px;
+  margin-top: 32px;
+  font-family: $font-family-secondary;
+  font-size: $fs-3xs;
+  font-weight: $fw-medium;
+  line-height: 1.5;
+  color: $color-text-light;
+}
+
+.details {
+  align-self: flex-start;
+  margin-top: 18px;
+  font-family: $font-family-secondary;
+  font-size: $fs-2xs;
+  font-weight: $fw-semibold;
+  line-height: 1;
+  color: $color-primary;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.buy {
+  width: 188px;
+}
