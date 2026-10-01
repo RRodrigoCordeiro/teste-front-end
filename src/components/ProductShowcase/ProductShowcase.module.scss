@@ -24,7 +24,7 @@ $shadow-space-x: 24px;
   scroll-snap-type: x mandatory;
   scroll-padding-inline: $shadow-space-x;
   scrollbar-width: none; 
- 
+
   $peek: $shadow-space-x - $card-gap;
   mask-image: linear-gradient(
     to right,
@@ -35,13 +35,18 @@ $shadow-space-x: 24px;
   );
 
   &::-webkit-scrollbar {
-    display: none;  
+    display: none; 
   }
 }
 
 .slide {
   flex: 0 0 $card-width;
   scroll-snap-align: start;
+}
+
+
+.offscreen {
+  --card-shadow: none;
 }
 
 .status {

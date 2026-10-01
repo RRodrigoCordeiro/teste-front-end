@@ -10,7 +10,7 @@
   padding: 32px 12px 16px;
   background-color: $color-white;
   border-radius: $radius-card;
-  box-shadow: $shadow-card;
+  box-shadow: var(--card-shadow, #{$shadow-card});
 }
 
 .image {
@@ -32,7 +32,7 @@
   color: inherit;
   text-align: left;
 
- 
+
   &::after {
     content: '';
     position: absolute;
@@ -53,7 +53,7 @@
 .pricing {
   display: flex;
   flex-direction: column;
-  margin-top: auto;  
+  margin-top: auto;
   padding-top: 12px;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .buy {
-  position: relative;  
+  position: relative; 
   z-index: 1;
   margin-top: 12px;
 }

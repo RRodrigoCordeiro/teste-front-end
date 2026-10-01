@@ -35,7 +35,7 @@ export function ProductShowcase({
 }: ProductShowcaseProps) {
   const titleId = useId();
   const [activeCategory, setActiveCategory] = useState<string>(CATEGORIES[0]);
-  const { trackRef, canScrollPrev, canScrollNext, scroll } =
+  const { trackRef, canScrollPrev, canScrollNext, visibleIndexes, scroll } =
     useCarousel<HTMLUListElement>(products.length);
 
   const hasProducts = products.length > 0;
@@ -70,8 +70,14 @@ export function ProductShowcase({
         )}
 
         <ul ref={trackRef} className={styles.track}>
-          {products.map((product) => (
-            <li key={product.productName} className={styles.slide}>
+          {products.map((product, index) => (
+            <li
+              key={product.productName}
+              data-index={index}
+              className={`${styles.slide} ${
+                visibleIndexes.has(index) ? '' : styles.offscreen
+              }`}
+            >
               <ProductCard product={product} onSelect={onSelectProduct} />
             </li>
           ))}

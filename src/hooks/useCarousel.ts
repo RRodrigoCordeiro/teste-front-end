@@ -6,6 +6,9 @@ export function useCarousel<T extends HTMLElement>(itemCount: number) {
   const trackRef = useRef<T>(null);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
+  const [visibleIndexes, setVisibleIndexes] = useState<Set<number>>(
+    () => new Set(),
+  );
 
   const updateScrollState = useCallback(() => {
     const track = trackRef.current;
@@ -15,6 +18,7 @@ export function useCarousel<T extends HTMLElement>(itemCount: number) {
     setCanScrollPrev(track.scrollLeft > 0);
     setCanScrollNext(track.scrollLeft < maxScroll - 1);
   }, []);
+
 
   useEffect(() => {
     const track = trackRef.current;
@@ -32,6 +36,38 @@ export function useCarousel<T extends HTMLElement>(itemCount: number) {
     };
   }, [itemCount, updateScrollState]);
 
+ 
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const paddingX = parseFloat(getComputedStyle(track).paddingLeft) || 0;
+
+    const intersectionObserver = new IntersectionObserver(
+      (entries) => {
+        setVisibleIndexes((previous) => {
+          const next = new Set(previous);
+
+          entries.forEach((entry) => {
+            const index = Number((entry.target as HTMLElement).dataset.index);
+
+            if (entry.isIntersecting) next.add(index);
+            else next.delete(index);
+          });
+
+          return next;
+        });
+      },
+      { root: track, rootMargin: `0px -${paddingX}px` },
+    );
+
+    Array.from(track.children).forEach((item) =>
+      intersectionObserver.observe(item),
+    );
+
+    return () => intersectionObserver.disconnect();
+  }, [itemCount]);
+
   const scroll = (direction: ScrollDirection) => {
     const track = trackRef.current;
     if (!track) return;
@@ -41,5 +77,5 @@ export function useCarousel<T extends HTMLElement>(itemCount: number) {
     track.scrollBy({ left: distance, behavior: 'smooth' });
   };
 
-  return { trackRef, canScrollPrev, canScrollNext, scroll };
-} 
+  return { trackRef, canScrollPrev, canScrollNext, visibleIndexes, scroll };
+}
