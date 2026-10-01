@@ -1,0 +1,66 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+ 
+$overlay-gradient: linear-gradient(
+  90deg,
+  rgba(0, 0, 0, 0.8) 0%,
+  rgba(0, 0, 0, 0.8) calc(50% - 575px),
+  rgba(0, 0, 0, 0) calc(50% + 246px)
+);
+
+.banner {
+  position: relative;
+  isolation: isolate;  
+  min-height: 390px;
+  overflow: hidden;
+  background-color: $color-purple;  
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: $overlay-gradient;
+  }
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  @include container;
+  position: relative;
+  z-index: 2;  
+  padding: 78px 0 55px;
+}
+
+.title {
+  max-width: 822px;
+  font-size: $fs-4xl;
+  font-weight: $fw-semibold;
+  line-height: 50px;
+  color: $color-white;
+}
+
+.subtitle {
+  margin-top: 18px;
+  font-size: $fs-2xl;
+  font-weight: $fw-regular;
+  line-height: 1.5;
+  color: $color-white;
+}
+
+.highlight {
+  font-weight: $fw-bold;
+  color: $color-accent;
+}
+
+.cta {
+  margin-top: 41px;
+}
