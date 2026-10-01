@@ -1,3 +1,4 @@
+
 $color-blue: #3442b5;
 $color-yellow: #f7ca11;
 $color-purple: #271c47;
@@ -5,14 +6,22 @@ $color-gray: #9f9f9f;
 $color-gray-dark: #3f3f40;
 $color-white: #ffffff;
 
+
+$color-gray-light: #dedede; 
+$color-gray-border: #bdbdbd; 
+$color-gray-darker: #3b3b3b; 
+
+
 $color-primary: $color-blue;
 $color-accent: $color-yellow;
 $color-text: $color-gray-dark;
 $color-text-light: $color-gray;
 
+
 $font-family: 'Poppins', sans-serif;
 $font-family-secondary: 'Work Sans', sans-serif;
 $font-family-heading: 'Outfit', sans-serif;
+
 
 $fw-light: 300;
 $fw-regular: 400;
@@ -21,20 +30,27 @@ $fw-semibold: 600;
 $fw-bold: 700;
 $fw-black: 900;
 
-$fs-xs: 12px;
-$fs-sm: 14px;
-$fs-md: 15px;
-$fs-base: 16px;
-$fs-lg: 20px;
-$fs-xl: 30px;
-$fs-2xl: 32px;
-$fs-3xl: 40px;
-$fs-4xl: 48px;
+
+$fs-xs: 12px; 
+$fs-sm: 14px; 
+$fs-md: 15px; 
+$fs-base: 16px; 
+$fs-lg: 20px; 
+$fs-xl: 30px; 
+$fs-2xl: 32px; 
+$fs-3xl: 40px; 
+$fs-4xl: 48px; 
 
 
 $container-width: 1280px;
+$section-spacing: 90px;
+$card-width: 304px;
+$card-gap: 18px;
+
 
 $radius-card: 10px;
 $radius-button: 4px;
 
+
 $shadow-card: 0 3px 19px 0 rgba(0, 0, 0, 0.22);
+$shadow-arrow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);

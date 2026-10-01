@@ -1,8 +1,6 @@
 @use './variables' as *;
 
 @mixin container {
-  width: 100%;
-  max-width: $container-width;
-  margin: 0 auto;
-  padding: 0 16px;
+  width: min(100% - 32px, $container-width);
+  margin-inline: auto;
 }
