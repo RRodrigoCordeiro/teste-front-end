@@ -4,6 +4,7 @@ import { Header } from '@/components/Header';
 import { HeroBanner } from '@/components/HeroBanner';
 import { CategoryList } from '@/components/CategoryList';
 import { ProductShowcase } from '@/components/ProductShowcase';
+import { PartnerBanners } from '@/components/PartnerBanners';
 import { ProductModal } from '@/components/ProductModal';
 import type { Product } from '@/types/product';
 import styles from './App.module.scss';
@@ -32,6 +33,8 @@ function App() {
           showCategories
           onSelectProduct={setSelectedProduct}
         />
+
+        <PartnerBanners />
       </main>
 
       {selectedProduct && (
