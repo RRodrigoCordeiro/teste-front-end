@@ -1,0 +1,41 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+$circle-size: 211px;
+$circle-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.13);
+$circle-shadow-hover: 0 10px 24px 0 rgba(0, 0, 0, 0.18);
+
+.brands {
+  @include container;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  gap: 42px;
+  margin-top: 32px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $circle-size;
+  height: $circle-size;
+  border-radius: 50%;
+  background-color: $color-white;
+  box-shadow: $circle-shadow;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    box-shadow: $circle-shadow-hover;
+    transform: translateY(-4px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 4px;
+  }
+}

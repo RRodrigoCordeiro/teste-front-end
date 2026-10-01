@@ -5,6 +5,7 @@ import { HeroBanner } from '@/components/HeroBanner';
 import { CategoryList } from '@/components/CategoryList';
 import { ProductShowcase } from '@/components/ProductShowcase';
 import { PartnerBanners } from '@/components/PartnerBanners';
+import { BrandList } from '@/components/BrandList';
 import { ProductModal } from '@/components/ProductModal';
 import type { Product } from '@/types/product';
 import styles from './App.module.scss';
@@ -46,6 +47,17 @@ function App() {
         />
 
         <PartnerBanners />
+
+        <BrandList />
+
+        <ProductShowcase
+          title="Produtos relacionados"
+          products={products}
+          isLoading={isLoading}
+          error={error}
+          showViewAll
+          onSelectProduct={setSelectedProduct}
+        />
       </main>
 
       {selectedProduct && (
