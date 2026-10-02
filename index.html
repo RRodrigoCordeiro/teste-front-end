@@ -12,6 +12,7 @@
     <meta name="theme-color" content="#271c47" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
+    <!-- Open Graph: como a página aparece ao ser compartilhada (WhatsApp, LinkedIn, Facebook) -->
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="Econverse" />
@@ -21,7 +22,7 @@
       content="Celulares, acessórios, tablets, notebooks e TVs com as melhores ofertas."
     />
 
-
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Econverse | Ofertas em Tecnologia" />
     <meta
@@ -29,12 +30,26 @@
       content="Celulares, acessórios, tablets, notebooks e TVs com as melhores ofertas."
     />
 
+    <!-- Fontes: carregadas sem bloquear a exibição da página -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&family=Work+Sans:wght@400;500;600&family=Outfit:wght@600&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Work+Sans:wght@400;500;600&family=Outfit:wght@600&display=swap"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Work+Sans:wght@400;500;600&family=Outfit:wght@600&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Work+Sans:wght@400;500;600&family=Outfit:wght@600&display=swap"
+      />
+    </noscript>
   </head>
   <body>
     <div id="root"></div>

@@ -1,6 +1,6 @@
 import { useId } from 'react';
-import heroBannerImage from '@/assets/images/hero-banner.webp';
 import { Button } from '@/components/ui/Button';
+import heroImage from '@/assets/images/hero-banner.webp';
 import styles from './HeroBanner.module.scss';
 
 export function HeroBanner() {
@@ -10,7 +10,7 @@ export function HeroBanner() {
     <section className={styles.banner} aria-labelledby={titleId}>
       <img
         className={styles.image}
-        src={heroBannerImage}
+        src={heroImage}
         alt=""
         width={1440}
         height={390}
