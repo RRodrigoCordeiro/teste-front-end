@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/teste-front-end/:path*",
+      "destination": "https://app.econverse.com.br/teste-front-end/:path*"
+    }
+  ]
+}
