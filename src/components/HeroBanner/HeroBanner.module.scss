@@ -1,7 +1,6 @@
 @use '@/styles/variables' as *;
 @use '@/styles/mixins' as *;
 
- 
 $overlay-gradient: linear-gradient(
   90deg,
   rgba(0, 0, 0, 0.8) 0%,
@@ -11,10 +10,10 @@ $overlay-gradient: linear-gradient(
 
 .banner {
   position: relative;
-  isolation: isolate;  
+  isolation: isolate;
   min-height: 390px;
   overflow: hidden;
-  background-color: $color-purple;  
+  background-color: $color-purple;
 
   &::after {
     content: '';
@@ -22,6 +21,14 @@ $overlay-gradient: linear-gradient(
     inset: 0;
     z-index: 1;
     background: $overlay-gradient;
+  }
+
+  @include below($bp-lg) {
+    min-height: 320px;
+  }
+
+  @include below($bp-sm) {
+    min-height: 280px;
   }
 }
 
@@ -36,8 +43,16 @@ $overlay-gradient: linear-gradient(
 .content {
   @include container;
   position: relative;
-  z-index: 2;  
+  z-index: 2;
   padding: 78px 0 55px;
+
+  @include below($bp-lg) {
+    padding: 56px 0 40px;
+  }
+
+  @include below($bp-sm) {
+    padding: 40px 0 32px;
+  }
 }
 
 .title {
@@ -46,6 +61,15 @@ $overlay-gradient: linear-gradient(
   font-weight: $fw-semibold;
   line-height: 50px;
   color: $color-white;
+
+  @include below($bp-lg) {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  @include below($bp-sm) {
+    font-size: 28px;
+  }
 }
 
 .subtitle {
@@ -54,6 +78,15 @@ $overlay-gradient: linear-gradient(
   font-weight: $fw-regular;
   line-height: 1.5;
   color: $color-white;
+
+  @include below($bp-lg) {
+    margin-top: 12px;
+    font-size: 24px;
+  }
+
+  @include below($bp-sm) {
+    font-size: $fs-lg;
+  }
 }
 
 .highlight {
@@ -63,4 +96,12 @@ $overlay-gradient: linear-gradient(
 
 .cta {
   margin-top: 41px;
+
+  @include below($bp-lg) {
+    margin-top: 32px;
+  }
+
+  @include below($bp-sm) {
+    margin-top: 24px;
+  }
 }
