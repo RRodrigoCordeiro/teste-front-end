@@ -60,7 +60,7 @@ npm run dev
 
 Acesse `http://localhost:5173`.
 
-Para gerar e visualizar a **versão de produção**:
+Para **compilar** o projeto (build de produção) e visualizar o resultado:
 
 ```bash
 npm run build
