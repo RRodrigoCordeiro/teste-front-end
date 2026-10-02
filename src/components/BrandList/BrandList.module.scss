@@ -11,6 +11,10 @@ $circle-shadow-hover: 0 10px 24px 0 rgba(0, 0, 0, 0.18);
 
 .brands {
   @include container;
+
+  @include below($bp-lg) {
+    width: 100%;
+  }
 }
 
 .list {
@@ -26,10 +30,8 @@ $circle-shadow-hover: 0 10px 24px 0 rgba(0, 0, 0, 0.18);
   @include below($bp-lg) {
     justify-content: flex-start;
     gap: 16px;
-    width: 100vw;
     margin-top: 32px - $shadow-space;
-    margin-inline: calc(50% - 50vw);
-    padding: $shadow-space;
+    padding: $shadow-space 16px;
     overflow-x: auto;
     scrollbar-width: none;
 
