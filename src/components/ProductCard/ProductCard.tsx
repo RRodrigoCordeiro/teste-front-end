@@ -1,5 +1,9 @@
 import type { Product } from '@/types/product';
-import { formatPrice, getInstallmentValue } from '@/utils/formatPrice';
+import {
+  formatPrice,
+  getInstallmentValue,
+  getOldPrice,
+} from '@/utils/formatPrice';
 import { Button } from '@/components/ui/Button';
 import styles from './ProductCard.module.scss';
 
@@ -36,7 +40,14 @@ export function ProductCard({ product, onSelect }: ProductCardProps) {
       </h3>
 
       <div className={styles.pricing}>
-        <p className={styles.price}>{formatPrice(price)}</p>
+        <p className={styles.oldPrice}>
+          <span className={styles.srOnly}>Preço anterior: </span>
+          <del>{getOldPrice(price)}</del>
+        </p>
+        <p className={styles.price}>
+          <span className={styles.srOnly}>Preço atual: </span>
+          {formatPrice(price)}
+        </p>
         <p className={styles.installments}>
           ou 2x de {getInstallmentValue(price)} sem juros
         </p>

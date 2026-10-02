@@ -1,4 +1,5 @@
 @use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
 
 .card {
   position: relative;
@@ -32,7 +33,6 @@
   color: inherit;
   text-align: left;
 
-
   &::after {
     content: '';
     position: absolute;
@@ -50,11 +50,21 @@
   }
 }
 
+.srOnly {
+  @include visually-hidden;
+}
+
 .pricing {
   display: flex;
   flex-direction: column;
   margin-top: auto;
   padding-top: 12px;
+}
+
+.oldPrice {
+  font-size: $fs-base;
+  font-weight: $fw-regular;
+  color: $color-text-light;
 }
 
 .price {
@@ -74,7 +84,7 @@
 }
 
 .buy {
-  position: relative; 
+  position: relative;
   z-index: 1;
   margin-top: 12px;
 }
