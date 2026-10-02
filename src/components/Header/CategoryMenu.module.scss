@@ -1,12 +1,22 @@
 @use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
 
 .menu {
   position: relative;
-  z-index: 1;  
+  z-index: 1;
   height: 40px;
   border-top: 1px solid $color-divider;
   background-color: $color-white;
   box-shadow: $shadow-menu;
+
+  @include below($bp-lg) {
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
 
 .list {
@@ -15,6 +25,18 @@
   justify-content: center;
   gap: 91px;
   height: 100%;
+
+  @include below($bp-xl) {
+    gap: 48px;
+  }
+
+  @include below($bp-lg) {
+    justify-content: flex-start;
+    gap: 32px;
+    width: max-content;
+    margin-inline: auto;
+    padding-inline: 16px;
+  }
 }
 
 .link {
@@ -25,6 +47,7 @@
   font-weight: $fw-semibold;
   color: $color-text-light;
   text-transform: uppercase;
+  white-space: nowrap;
 
   &:hover {
     color: $color-highlight;
