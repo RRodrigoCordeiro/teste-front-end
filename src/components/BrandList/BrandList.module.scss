@@ -2,6 +2,10 @@
 @use '@/styles/mixins' as *;
 
 $circle-size: 211px;
+$circle-size-md: 180px;
+$circle-size-sm: 120px;
+$logo-width-sm: 80px;
+$shadow-space: 24px;
 $circle-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.13);
 $circle-shadow-hover: 0 10px 24px 0 rgba(0, 0, 0, 0.18);
 
@@ -14,6 +18,25 @@ $circle-shadow-hover: 0 10px 24px 0 rgba(0, 0, 0, 0.18);
   justify-content: center;
   gap: 42px;
   margin-top: 32px;
+
+  @include below($bp-xl) {
+    gap: 24px;
+  }
+
+  @include below($bp-lg) {
+    justify-content: flex-start;
+    gap: 16px;
+    width: 100vw;
+    margin-top: 32px - $shadow-space;
+    margin-inline: calc(50% - 50vw);
+    padding: $shadow-space;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
 
 .brand {
@@ -29,13 +52,30 @@ $circle-shadow-hover: 0 10px 24px 0 rgba(0, 0, 0, 0.18);
     box-shadow 0.2s ease,
     transform 0.2s ease;
 
-  &:hover {
-    box-shadow: $circle-shadow-hover;
-    transform: translateY(-4px);
-  }
-
   &:focus-visible {
     outline: 2px solid $color-primary;
     outline-offset: 4px;
+  }
+
+  @include below($bp-xl) {
+    width: $circle-size-md;
+    height: $circle-size-md;
+  }
+
+  @include below($bp-sm) {
+    width: $circle-size-sm;
+    height: $circle-size-sm;
+
+    img {
+      width: $logo-width-sm;
+      height: auto;
+    }
+  }
+}
+
+@media (hover: hover) {
+  .brand:hover {
+    box-shadow: $circle-shadow-hover;
+    transform: translateY(-4px);
   }
 }
