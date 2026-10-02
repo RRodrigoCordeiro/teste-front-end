@@ -3,6 +3,7 @@
 
 $shadow-space-y: 24px;
 $shadow-space-x: 24px;
+$shadow-space-x-compact: 16px;
 $card-width-sm: 260px;
 
 .showcase {
@@ -59,6 +60,14 @@ $card-width-sm: 260px;
 
   &::-webkit-scrollbar {
     display: none;
+  }
+
+ 
+  @include below($bp-xl) {
+    margin-inline: -$shadow-space-x-compact;
+    padding-inline: $shadow-space-x-compact;
+    scroll-padding-inline: $shadow-space-x-compact;
+    mask-image: none;
   }
 }
 
