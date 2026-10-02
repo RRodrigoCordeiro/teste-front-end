@@ -7,6 +7,7 @@ import { ProductShowcase } from '@/components/ProductShowcase';
 import { PartnerBanners } from '@/components/PartnerBanners';
 import { BrandList } from '@/components/BrandList';
 import { Newsletter } from '@/components/Newsletter';
+import { Footer } from '@/components/Footer';
 import { ProductModal } from '@/components/ProductModal';
 import type { Product } from '@/types/product';
 import styles from './App.module.scss';
@@ -62,6 +63,8 @@ function App() {
 
         <Newsletter />
       </main>
+
+      <Footer />
 
       {selectedProduct && (
         <ProductModal product={selectedProduct} onClose={handleCloseModal} />

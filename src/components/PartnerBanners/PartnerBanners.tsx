@@ -31,7 +31,6 @@ export function PartnerBanners() {
           <div className={styles.content}>
             <h2 className={styles.title}>{title}</h2>
             <p className={styles.description}>{description}</p>
-            {/* Numa loja real, levaria à página do parceiro */}
             <a href="#" className={styles.link}>
               Confira
             </a>

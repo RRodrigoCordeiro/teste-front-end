@@ -1,0 +1,117 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+$footer-text: rgba(34, 34, 34, 0.71);
+$divider-color: rgba(40, 40, 40, 0.18);
+$fs-copyright: 13px;
+
+.main {
+  background-color: $color-gray-pale;
+}
+
+.inner {
+  @include container;
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  min-height: 282px;
+  padding-block: 42px;
+}
+
+.brand {
+  flex: 0 0 354px;
+}
+
+.logo {
+  display: inline-block;
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 4px;
+  }
+}
+
+.about {
+  margin-top: 18px;
+  font-size: $fs-sm;
+  font-weight: $fw-light;
+  line-height: 1.5;
+  color: $color-text;
+}
+
+.social {
+  display: flex;
+  gap: 26px;
+  margin-top: 27px;
+}
+
+.socialLink {
+  display: flex;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 4px;
+  }
+}
+
+.divider {
+  flex-shrink: 0;
+  align-self: stretch; 
+  width: 1px;
+  background-color: $divider-color;
+}
+
+.columns {
+  display: flex;
+  gap: 100px;
+}
+
+.columnTitle {
+  font-size: $fs-base;
+  font-weight: $fw-bold;
+  line-height: 16px;
+  color: $footer-text;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.link {
+  font-family: $font-family-secondary;
+  font-size: $fs-sm;
+  line-height: 16px;
+  color: $footer-text;
+
+  &:hover {
+    color: $color-primary;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-primary;
+    outline-offset: 2px;
+  }
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 47px;
+  background-color: $color-white;
+}
+
+.copyright {
+  font-size: $fs-copyright;
+  font-weight: $fw-light;
+  color: $color-text;
+  text-align: center;
+}
