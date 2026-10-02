@@ -2,16 +2,41 @@
 @use '@/styles/mixins' as *;
 
 $box-size: 128px;
+$box-size-sm: 96px;
 $icon-size: 61px;
+$icon-size-sm: 46px;
+$shadow-space: 16px;
 
 .categories {
   @include container;
+
+  @include below($bp-lg) {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 }
 
 .list {
   display: flex;
   justify-content: center;
   gap: 42px;
+
+  @include below($bp-xl) {
+    gap: 24px;
+  }
+
+  @include below($bp-lg) {
+    justify-content: flex-start;
+    gap: 16px;
+    width: max-content;
+    margin-inline: auto;
+    padding: $shadow-space;
+  }
 }
 
 .item {
@@ -20,6 +45,11 @@ $icon-size: 61px;
   align-items: center;
   gap: 22px;
   width: $box-size;
+
+  @include below($bp-sm) {
+    gap: 12px;
+    width: $box-size-sm;
+  }
 
   &:focus-visible {
     outline: none;
@@ -40,13 +70,17 @@ $icon-size: 61px;
   border-radius: $radius-card;
   background-color: $color-gray-pale;
   box-shadow: $shadow-category;
-  color: $color-black; 
+  color: $color-black;
   transition:
     background-color 0.2s ease,
     box-shadow 0.2s ease,
     color 0.2s ease;
-}
 
+  @include below($bp-sm) {
+    width: $box-size-sm;
+    height: $box-size-sm;
+  }
+}
 
 .icon {
   width: $icon-size;
@@ -54,6 +88,11 @@ $icon-size: 61px;
   background-color: currentColor;
   mask: var(--icon) center / contain no-repeat;
   -webkit-mask: var(--icon) center / contain no-repeat;
+
+  @include below($bp-sm) {
+    width: $icon-size-sm;
+    height: $icon-size-sm;
+  }
 }
 
 .label {
@@ -61,6 +100,10 @@ $icon-size: 61px;
   font-weight: $fw-medium;
   color: $color-gray-strong;
   white-space: nowrap;
+
+  @include below($bp-sm) {
+    font-size: $fs-xs;
+  }
 }
 
 .item:hover .box {
