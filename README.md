@@ -4,6 +4,8 @@ Página inicial de e-commerce de tecnologia, desenvolvida em **React e TypeScrip
 
 🔗 **Site publicado:** https://econverse-front-end-beta.vercel.app
 
+![Página inicial da Econverse](docs/preview.png)
+
 ---
 
 ## Sumário
@@ -34,7 +36,7 @@ Página inicial de e-commerce de tecnologia, desenvolvida em **React e TypeScrip
 | **React 19 + TypeScript** | Interface e tipagem de todo o projeto |
 | **Vite** | Ambiente de desenvolvimento, build e proxy da API |
 | **Sass (SCSS Modules)** | Estilos isolados por componente, com tokens de design |
-| **TanStack Query** | Busca, cache e estados de carregamento/erro dos produtos |
+| **TanStack Query (React Query)** | Busca, cache e estados de carregamento/erro dos produtos |
 | **ESLint + Prettier** | Padronização e qualidade do código |
 | **Vercel** | Hospedagem e proxy da API em produção |
 
@@ -42,7 +44,7 @@ Não foi usada nenhuma biblioteca de UI (Bootstrap, Foundation etc.) nem de carr
 
 ## Como rodar
 
-**Pré-requisitos:** Node.js 20 ou superior e npm.
+**Pré-requisitos:** Node.js 20.19+ (ou 22.12+) e npm.
 
 ```bash
 # 1. Clonar o repositório
