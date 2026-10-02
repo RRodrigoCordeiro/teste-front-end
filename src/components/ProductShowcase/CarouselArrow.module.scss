@@ -1,8 +1,9 @@
 @use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
 
 .arrow {
   position: absolute;
-  top: calc(50% + 12px);  
+  top: calc(50% + 12px);
   z-index: 1;
   display: flex;
   align-items: center;
@@ -24,17 +25,28 @@
     outline: 2px solid $color-primary;
     outline-offset: 2px;
   }
+
+  @include below($bp-md) {
+    display: none;
+  }
 }
 
- 
 .prev {
   left: -47px;
 
   svg {
     transform: rotate(180deg);
   }
+
+  @include below($bp-xl) {
+    left: -12px;
+  }
 }
 
 .next {
   right: -47px;
+
+  @include below($bp-xl) {
+    right: -12px;
+  }
 }

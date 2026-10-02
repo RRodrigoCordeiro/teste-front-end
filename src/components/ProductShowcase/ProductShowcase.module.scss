@@ -3,6 +3,7 @@
 
 $shadow-space-y: 24px;
 $shadow-space-x: 24px;
+$card-width-sm: 260px;
 
 .showcase {
   @include container;
@@ -31,6 +32,10 @@ $shadow-space-x: 24px;
   position: relative;
   max-width: $card-width * 4 + $card-gap * 3;
   margin: 24px auto 0;
+
+  @include below($bp-xl) {
+    max-width: none;
+  }
 }
 
 .track {
@@ -60,6 +65,10 @@ $shadow-space-x: 24px;
 .slide {
   flex: 0 0 $card-width;
   scroll-snap-align: start;
+
+  @include below($bp-sm) {
+    flex-basis: $card-width-sm;
+  }
 }
 
 .offscreen {
